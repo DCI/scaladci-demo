@@ -8,7 +8,7 @@ Clone this repo and play around:
 
 1. `git clone https://github.com/dci/scaladci-demo.git`
 2. Open project in your IDE
-3. Run DemoApp
+3. Run `MoneyTransferApp`
 
 
 ### ScalaDCI in your own project
