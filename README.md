@@ -2,7 +2,7 @@
 
 ####Minimal project setup for using ScalaDCI
 
-_See [Molecule](http://scaladci.org) website for more info._
+_See [ScalaDCI](http://scaladci.org) website for more info._
 
 Clone this repo and play around:
 
