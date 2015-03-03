@@ -9,6 +9,7 @@ Clone this repo and play around:
 1. `git clone https://github.com/dci/scaladci-demo.git`
 2. Open/import project in your IDE
 3. Run `MoneyTransferApp`
+4. Make your own Context, Roles and Interactions...
 
 
 ### ScalaDCI in your own project
