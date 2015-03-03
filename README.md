@@ -7,7 +7,7 @@ _See [Molecule](http://scaladci.org) website for more info._
 Clone this repo and play around:
 
 1. `git clone https://github.com/dci/scaladci-demo.git`
-2. Open project in your IDE
+2. Open/import project in your IDE
 3. Run `MoneyTransferApp`
 
 
