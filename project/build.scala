@@ -7,17 +7,13 @@ object ScalaDciDemoBuild extends Build {
     id = "scaladci",
     base = file("."),
     aggregate = Seq(scaladciDemo),
-    settings = commonSettings ++ Seq(
-      moduleName := "scaladci-demo-root"
-    )
+    settings = commonSettings ++ Seq(moduleName := "scaladci-demo-root")
   )
 
   lazy val scaladciDemo = Project(
     id = "scaladci-demo",
     base = file("demo"),
-    settings = commonSettings ++ Seq(
-      moduleName := "scaladci-demo"
-    )
+    settings = commonSettings ++ Seq(moduleName := "scaladci-demo")
   )
 
   lazy val commonSettings = Defaults.coreDefaultSettings ++ Seq(
@@ -27,8 +23,7 @@ object ScalaDciDemoBuild extends Build {
     scalacOptions := Seq("-unchecked", "-deprecation", "-feature"),
     resolvers ++= Seq(Resolver.sonatypeRepo("releases"), Resolver.sonatypeRepo("snapshots")),
     libraryDependencies ++= Seq(
-      "org.scaladci" %% "scaladci" % "0.5.2",
-      "org.specs2" %% "specs2" % "2.4.11" % "test"
+      "org.scaladci" %% "scaladci" % "0.5.2"
     ),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
   )
