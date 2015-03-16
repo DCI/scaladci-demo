@@ -18,7 +18,7 @@ Add the following to your project file:
 
 ```scala
 libraryDependencies ++= Seq(
-  "org.scaladci" %% "scaladci" % "0.5.2"
+  "org.scaladci" %% "scaladci" % "0.5.4"
 ),
 addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
 ```

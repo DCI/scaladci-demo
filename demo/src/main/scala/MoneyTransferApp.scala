@@ -9,13 +9,8 @@ import scaladci._
   4. Define role methods (what will those actors do...)
   5. Define the trigger that starts off the chain of interactions between the roles
 
-  Normally we lowercase parameter names. "Source" and "Destination" of the MoneyTransfer
-  DCI context are an exception since we want to associate them with our role definitions.
   A role definition has to match an object identifier in the context scope. Not necessarily
   a class parameter, any val/var will do as long as the identifier name matches a defined role.
-
-  Compared to this school-book example, Data classes, DCI Contexts and the runtime
-  environment would of course normally be in separate tiers.
 
   More info         - http://github.com/dci/scaladci
   Official website  - http://fulloo.info
@@ -30,22 +25,22 @@ object MoneyTransferApp extends App {
     def decreaseBalance(amount: Int) { balance -= amount }
   }
 
-  // DCI Context - encapsulates a specific "process"/"use case"/"network of interactions" etc
+  // DCI Context - encapsulates a network of interactions between role-playing objects (often implementing a use case)
   @context
-  class MoneyTransfer(Source: Account, Destination: Account, amount: Int) {
+  class MoneyTransfer(source: Account, destination: Account, amount: Int) {
 
-    Source.withdraw // Trigger method setting off the use case
+    source.withdraw // Trigger method setting off the use case
 
-    role Source {                       // Role definition
+    role source {                       // Role definition
       def withdraw() {                  // Role method
-        Source.decreaseBalance(amount)  // Instance method
-        Destination.deposit             // Role interacts with other role
+        source.decreaseBalance(amount)  // Instance method
+        destination.deposit             // Role interacts with other role
       }
     }
 
-    role Destination {
+    role destination {
       def deposit() {
-        Destination.increaseBalance(amount)
+        destination.increaseBalance(amount)
       }
     }
   }
@@ -63,4 +58,5 @@ object MoneyTransferApp extends App {
   // Confirm that amount has transferred
   assert(salary.balance == 3000 - 700, s"Salary balance should have been 3000 - 700 = 2300. Is now ${salary.balance}")
   assert(budget.balance == 1000 + 700, s"Budget balance should have been 1000 + 700 = 1700. Is now ${budget.balance}")
+  println("SUCCES!")
 }
