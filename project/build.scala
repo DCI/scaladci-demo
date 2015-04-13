@@ -18,12 +18,12 @@ object ScalaDciDemoBuild extends Build {
 
   lazy val commonSettings = Defaults.coreDefaultSettings ++ Seq(
     organization := "org.scaladci",
-    version := "0.5.4",
+    version := "0.5.5",
     scalaVersion := "2.11.6",
     scalacOptions := Seq("-unchecked", "-deprecation", "-feature"),
     resolvers ++= Seq(Resolver.sonatypeRepo("releases"), Resolver.sonatypeRepo("snapshots")),
     libraryDependencies ++= Seq(
-      "org.scaladci" %% "scaladci" % "0.5.4"
+      "org.scaladci" %% "scaladci" % "0.5.5"
     ),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
   )
