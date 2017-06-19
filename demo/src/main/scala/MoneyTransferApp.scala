@@ -17,13 +17,13 @@ import scaladci._
   Discussions       - https://groups.google.com/forum/#!forum/object-composition
 */
 
-object MoneyTransferApp extends App {
+// Data - knows nothing of transfers...
+case class Account(name: String, var balance: Int) {
+  def increaseBalance(amount: Int) { balance += amount }
+  def decreaseBalance(amount: Int) { balance -= amount }
+}
 
-  // Data - knows nothing of transfers...
-  case class Account(name: String, var balance: Int) {
-    def increaseBalance(amount: Int) { balance += amount }
-    def decreaseBalance(amount: Int) { balance -= amount }
-  }
+object MoneyTransferApp extends App {
 
   // DCI Context - encapsulates a network of interactions between role-playing objects (often implementing a use case)
   @context

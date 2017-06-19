@@ -1,6 +1,6 @@
 # ScalaDCI demo app
 
-####Minimal project setup for using ScalaDCI
+#### Minimal project setup for using ScalaDCI
 
 _See [ScalaDCI](http://scaladci.org) website for more info._
 
@@ -18,7 +18,7 @@ Add the following to your project file:
 
 ```scala
 libraryDependencies ++= Seq(
-  "org.scaladci" %% "scaladci" % "0.5.5"
+  "org.scaladci" %% "scaladci" % "0.5.6"
 ),
-addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
+addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
 ```
